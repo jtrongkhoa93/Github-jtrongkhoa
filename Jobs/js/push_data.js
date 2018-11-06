@@ -167,43 +167,76 @@ addList.call(event1,eventList);
 function jobCard(jobObj,position,quantity1,quantity2){
       $("#"+position).empty();
             if ($( window ).width() > 576){
-                  var quantity=quantity1;
+                  for (var i=0;i<quantity1;i++){
+                        $("#"+position).append(
+                  `<div class='row bg-light p-3 col-md-6 border-bottom border-bottom-secondary jobcard rounded'>
+                        <img class='mr-3 col-2 logo' src='`+ empList[jobObj.empID].logo +`' alt='Generic placeholder image'>
+                              <div class='col-6 pr-0'>
+                                    <h5 class='mt-0 truncate'>
+                                    <a href='../employer/job_description.html'>`+ jobObj.title +`</a>
+                                    </h5>
+                                    <h6 class='truncate'>
+                                    <a href='../employer/employer_profile.html'>`+ empList[jobObj.empID].name +`</a>
+                                    </h6>
+                                    <div class=''>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-money-bill-alt'></i>`+jobObj.salary+`
+                                          </div>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-map-marker-alt'></i>`+jobObj.city+`
+                                          </div>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-users'></i> `+jobObj.vacancy+`<i class='fas fa-`+jobObj.gender+`'></i>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class='col-3'>
+                                    <p class='border border-secondary deadline text-center'>Hạn cuối: `+ jobObj.deadline +`</p>
+                                    <button class='btn btn__sn--sm bg-primary px-0 py-0' type='button'>
+                                          <a href='https://www.facebook.com/LeBonjourJOB/'><i class='fas fa-bookmark'></i> Lưu</a>
+                                    </button>
+                                    <a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flebonjourjob.netlify.com%2F&amp;src=sdkpreparse' class='fb-xfbml-parse-ignore btn btn__sn btn__sn--sm btn__sn--fb w-100 px-1'>
+                                          <i class='fab fa-facebook'></i> Share 
+                                    </a>
+                              </div>
+                              
+                  </div>`
+                  )   
+                  }
+                   
             } else {
-                  var quantity=quantity2;
+                  for (var i=0;i<quantity2;i++){
+                        $("#"+position).append(
+                  `<div class='row bg-light p-3 pb-5 col-md-6 border-bottom border-bottom-secondary jobcard rounded'>
+                        <img class='mr-3 col-4 logo' src='`+ empList[jobObj.empID].logo +`' alt='Generic placeholder image'>
+                              
+                              <div class='col-6'>
+                                    <p class='border border-secondary deadline text-center'>Hạn cuối: `+ jobObj.deadline +`</p>
+                                    <button class='btn btn__sn--sm bg-primary px-0 py-0' type='button'>
+                                          <a href='https://www.facebook.com/LeBonjourJOB/'><i class='fas fa-bookmark'></i> Lưu</a>
+                                    </button>
+                                    <a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flebonjourjob.netlify.com%2F&amp;src=sdkpreparse' class='fb-xfbml-parse-ignore btn btn__sn btn__sn--sm btn__sn--fb w-100 px-1'>
+                                          <i class='fab fa-facebook'></i> Share 
+                                    </a>
+                              </div>
+                              <div class='col-12 pr-0'>
+                                    <h5 class='mt-0 truncate'>
+                                    <a href='../employer/job_description.html'>`+ jobObj.title +`</a>
+                                    </h5>
+                                    <h6 class='truncate'>
+                                    <a href='../employer/employer_profile.html'>`+ empList[jobObj.empID].name +`</a>
+                                    </h6>
+                                    <div class=''>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-money-bill-alt'></i>`+jobObj.salary+`
+                                          </div>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-map-marker-alt'></i>`+jobObj.city+`
+                                          </div>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-users'></i> `+jobObj.vacancy+`<i class='fas fa-`+jobObj.gender+`'></i>
+                                          </div>
+                                    </div>
+                              </div>
+                  </div>`
+                        )   
+                        }
             }
-for (var i=0;i<quantity;i++){
-      $("#"+position).append(
-"<div class='media bg-light p-3 col-md-6 border-bottom border-bottom-secondary jobcard rounded'>"+
-      "<img class='mr-3 logo' src='"+ empList[jobObj.empID].logo +"' alt='Generic placeholder image'>"+
-      "<div class='media-body row'>"+
-    "<div class='col-md-9 pr-0'>"+
-          "<h5 class='mt-0 truncate'>"+
-                "<a href='../employer/job_description.html'>"+ jobObj.title +"</a></h5>"+
-          "<h6 class='truncate'>"+
-                "<a href='../employer/employer_profile.html'>"+ empList[jobObj.empID].name +"</a></h6>"+
-    
-    "<div class=''>"+
-  
-    "<div class='mr-3 d-inline-block'><i class='fas fa-money-bill-alt'></i> "+
-              jobObj.salary+"</div>"+
-        "<div class='mr-3 d-inline-block'><i class='fas fa-map-marker-alt'></i> "+
-              jobObj.city+"</div>"+
-        "<div class='mr-3 d-inline-block'><i class='fas fa-users'></i> "+jobObj.vacancy+
-              " <i class='fas fa-"+jobObj.gender+"'></i>"+
-        "</div>"+
-  "</div>"+
-  "</div>"+
-  "<div class='col-md-3'>"+
-  "<p class='border border-secondary deadline text-center'>Hạn cuối: "+ jobObj.deadline +"</p>"+
-  "<button class='btn btn__sn--sm bg-primary px-0 py-0' type='button'>"+
-            "<a href='https://www.facebook.com/LeBonjourJOB/'><i class='fas fa-bookmark'></i> Lưu</a>"+
-      "</button>"+
-  "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flebonjourjob.netlify.com%2F&amp;src=sdkpreparse'"+
-              "class='fb-xfbml-parse-ignore btn btn__sn btn__sn--sm btn__sn--fb w-100 px-1'>"+
-              "<i class='fab fa-facebook'></i> Share </a>"+
-             "</div> </div></div>"
-      )   
-      } 
+
 //       $( window ).resize(function() {
 //             jobCard(jobObj,position,quantity1,quantity2)
 //     });
@@ -219,7 +252,7 @@ function vipCard(empObj,position,quantity1,quantity2){
             }
             for (var i=0;i<quantity;i++){
                   $("#"+position).append(`
-                  <div class='col-md-3 mt-4'>
+                  <div class='col-6 col-md-3 mt-4'>
                   <div class='card employer__vip'>
                         <img class='card-img-top w-75 h-25 align-self-center' src='`+ empObj.logo +`'
                               alt=' `+empObj.name+` logo'>
@@ -338,11 +371,11 @@ function eventCard(eventObj,position,quantity1,quantity2){
                   var quantity=quantity2;
             }
       $("#"+position).append(`
-            <div class="col-md-4 py-3">
+            <div class="d-none d-md-inline col-md-4 py-3">
             </div>`)
       for (var i=0;i<quantity;i++){
             $("#"+position).append(`
-            <div class="col-md-4 py-3">
+            <div class="col-12 col-md-4 py-3">
                   <div class="card event__card">
                         <div class="row p-0 text-dark">
                               <div class="col-md-3 border-right border-right-primary event__card__date">
@@ -354,7 +387,7 @@ function eventCard(eventObj,position,quantity1,quantity2){
                                     </span>
                               </div>
                               <div class="col-md-9">
-                                    <img class="card-img-top" src="`+eventObj.preview+`" alt="`+eventObj.title+`">
+                                    <img class="d-none d-md-inline card-img-top" src="`+eventObj.preview+`" alt="`+eventObj.title+`">
                               </div>
 
                         </div>

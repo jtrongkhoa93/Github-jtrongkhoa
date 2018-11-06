@@ -1,68 +1,4 @@
-/*
-html{
-  height: 100%;
-  overflow: hidden;
-}
 
-body{
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      perspective: 1px;
-      transform-style: preserve-3d;
-      height: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      font-family: "Luna";
-}
-header{
-      box-sizing: border-box;
-      padding: 30vw 0 5vw;
-      width: 100vw;
-      min-height: 100vh;
-      position: relative;
-      transform-style: inherit;
-}
-
-header h1{
-      margin-top: -100px;
-}
-header *{
-      text-align: center;
-      font-size: 3rem;      
-}
-.box{
-      box-shadow: black 5px 5px 10px;
-      height: auto;
-      width: auto;
-      background: rgba(0,0,0,0.5);
-      margin: auto;
-      padding: 20px;
-}
-header, header:before{
-      background: 50% 50% / cover;
-}
-
-header::before{
-      bottom: 0;
-      content: "";
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: block;
-      background-image: url(../images/photo.jpg);
-      background-size: cover;
-      transform-origin: center center 0;
-      transform: translateZ(-1px) scale(2);
-      z-index: -1;
-      min-height: 500vh;
-}
-.dummy{
-      height: 500px;
-      background: rgba(0,0,0,0.5);
-}
-*/
 /*------- Scrollbar Customize --------*/
 /* width */
 ::-webkit-scrollbar {
@@ -160,7 +96,11 @@ section {
       padding: 50px 80px;
       text-align: center;
 }
-
+@media only screen and (max-width: 576px){
+      section {
+            padding: 30px 40px;
+      }
+}
 .section-light {
       background-color: #f4f4f4;
       color: #666;
@@ -280,11 +220,21 @@ section {
 }
 
 .see-more{
-      margin-left: 85%;
+      /* margin-left: 85%; */
 }
 #createCV ul{
       z-index: 1000 !important;
 }
+
+a.login, a.signup{
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.8)
+}
+a.login:hover, a.signup:hover{
+      background: rgba(255,255,255,0.6);
+      border-color: rgba(255,255,255,0.8)
+}
+
 /*------- Job filter -------*/
 
 .jumbotron {
@@ -293,6 +243,26 @@ section {
       padding: 0px auto !important;
 }
 
+@media only screen and (max-width: 576px){
+      .jumbotron{
+            width: 90%;
+      }
+      button.multiselect{
+            width: 121px !important;
+      }
+      #jobFilter label{
+            width: 120px;
+      }
+      #jobFilter .form-row{
+            width: 300px;
+      }
+      label.custom-control-label{
+            width: 100% !important;
+      }
+      /* #jobFilter .custom-control{
+            width: 100%;
+      } */
+}
 .multiselect-container {
       max-height: 200px;
       overflow-y: scroll;
@@ -330,7 +300,8 @@ section {
 /* -------- Job card --------- */
 
 .jobcard img.logo{
-      width: 100px !important;
+      width: 100% !important;
+      height: 70% !important;
 }
 .jobcard {
       font-size: 0.9rem;
@@ -355,7 +326,8 @@ section {
 
 /*------ VIP Employer --------*/
 .employer__vip{
-      width: 95%;
+      width: 100%;
+      font-size: 0.9rem;
 }
 .employer__vip::before {
       content: "NTD VIP";
@@ -364,8 +336,8 @@ section {
       top: 5px;
       left: 10px;
       color: white;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 500;
+      font-size: 0.8rem;
       padding: 7px;
       border-radius: 0 0 5px 5px;
 }
@@ -373,9 +345,7 @@ section {
       background: rgba(122, 184, 14,0.3);
       border-style: dotted !important;
 }
-.employer__vip {
-      font-size: 0.9rem;
-}
+
 .employer__vip h5{
       font-size: 1.1rem;
       font-weight: 700;
@@ -384,7 +354,14 @@ section {
       font-size: 0.9rem;
 }
 
-
+@media only screen and (max-width: 576px){
+      .employer__vip, .employer__vip h5, .employer__vip h6{
+            font-size: 0.8rem;
+      }
+      #vipEmployers .col-md-3{
+            padding: 5px;
+      }
+}
 /*------ Events -------*/
 
 .event__row {
@@ -392,10 +369,26 @@ section {
       padding: 0 !important;
       position: relative;
 }
+@media only screen and (max-width: 576px){
+      .tab-content{
+      width: 400px;
+      }
+      .event__card button.btn__sn--sm{
+            min-width: 200px !important;
+            height: 30px;
+            margin-bottom: 5px;
+      }
+}
 .event__choose{
       position: absolute;
       width: 32%;
       z-index: 99;
+}
+@media only screen and (max-width: 576px){
+      .event__choose{
+      position: relative;
+      width: 100%;
+      }
 }
 .event__choose img{
       width: 60%;
@@ -412,7 +405,9 @@ a.event__choose__item {
       height: 124px;
 
 }
-
+.event__card{
+      width: 90%;
+}
 .event__card img {
       height: 90% !important;
 }
@@ -576,7 +571,7 @@ footer li:last-child {
       background-color: rgba(255,255,255,0.8) !important;
 } */
 #myScrollSpy{
-      width: 1140px;
+      width: 100%;
 }
 #myScrollSpy .active {
       color: #007bff !important;
@@ -676,3 +671,13 @@ footer li:last-child {
       height: 6vw;
 }
 
+
+
+/* Responsive typography */
+
+@media only screen and (max-width: 576px){
+      .ptext{
+            font-size: 15px;
+      }
+}
+    
