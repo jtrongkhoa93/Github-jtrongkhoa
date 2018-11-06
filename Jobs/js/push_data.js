@@ -204,9 +204,9 @@ for (var i=0;i<quantity;i++){
              "</div> </div></div>"
       )   
       } 
-      $( window ).resize(function() {
-            jobCard(jobObj,position,quantity1,quantity2)
-    });
+//       $( window ).resize(function() {
+//             jobCard(jobObj,position,quantity1,quantity2)
+//     });
 };
 
 function vipCard(empObj,position,quantity1,quantity2){
@@ -242,9 +242,9 @@ function vipCard(empObj,position,quantity1,quantity2){
                   `
                   )   
             } 
-            $( window ).resize(function() {
-                  vipCard(empObj,position,quantity1,quantity2)
-          });
+      //       $( window ).resize(function() {
+      //             vipCard(empObj,position,quantity1,quantity2)
+      //     });
 };
       function hiring(params) {
             str = '';
@@ -324,9 +324,9 @@ function articleCard(artObj,position,quantity){
             `
             )  
       $(".card-group").append(carouselItem(artObj,items))
-      $(window ).resize(function() {
-            articleCard(artObj,position,quantity)
-    });
+//       $(window ).resize(function() {
+//             articleCard(artObj,position,quantity)
+//     });
        
 }
 
@@ -387,7 +387,7 @@ function eventCard(eventObj,position,quantity1,quantity2){
             `
             )   
       }
-      $(window ).resize(function() {
-            eventCard(eventObj,position,quantity1,quantity2)
-    }); 
+//       $(window ).resize(function() {
+//             eventCard(eventObj,position,quantity1,quantity2)
+//     }); 
 }
