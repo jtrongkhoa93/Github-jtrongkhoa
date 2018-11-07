@@ -379,7 +379,7 @@ a.login:hover, a.signup:hover{
 }
 @media only screen and (max-width: 576px){
       .tab-content{
-      max-width: 300px;
+      min-width: 290px;
       }
       .event__row{
             width: 100%;
