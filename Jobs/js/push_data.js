@@ -169,7 +169,7 @@ function jobCard(jobObj,position,quantity1,quantity2){
             if ($( window ).width() > 576){
                   for (var i=0;i<quantity1;i++){
                         $("#"+position).append(
-                  `<div class='row bg-light p-3 col-md-6 border-bottom border-bottom-secondary jobcard rounded'>
+                  `<div class='row bg-light p-3 mx-auto col-md-6 border-bottom border-bottom-secondary jobcard rounded'>
                         <img class='mr-3 col-2 logo' src='`+ empList[jobObj.empID].logo +`' alt='Generic placeholder image'>
                               <div class='col-6 pr-0'>
                                     <h5 class='mt-0 truncate'>
@@ -204,7 +204,7 @@ function jobCard(jobObj,position,quantity1,quantity2){
             } else {
                   for (var i=0;i<quantity2;i++){
                         $("#"+position).append(
-                  `<div class='row bg-light p-3 pb-5 col-md-6 border-bottom border-bottom-secondary jobcard rounded'>
+                  `<div class='row bg-light p-3 pb-5 col-md-6 mx-auto border-bottom border-bottom-secondary jobcard rounded'>
                         <img class='mr-3 col-4 logo' src='`+ empList[jobObj.empID].logo +`' alt='Generic placeholder image'>
                               
                               <div class='col-6'>
@@ -224,11 +224,11 @@ function jobCard(jobObj,position,quantity1,quantity2){
                                     <a href='../employer/employer_profile.html'>`+ empList[jobObj.empID].name +`</a>
                                     </h6>
                                     <div class=''>
-                                          <div class='mr-3 d-inline-block'><i class='fas fa-money-bill-alt'></i>`+jobObj.salary+`
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-money-bill-alt'></i> `+jobObj.salary+`
                                           </div>
-                                          <div class='mr-3 d-inline-block'><i class='fas fa-map-marker-alt'></i>`+jobObj.city+`
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-map-marker-alt'></i> `+jobObj.city+`
                                           </div>
-                                          <div class='mr-3 d-inline-block'><i class='fas fa-users'></i> `+jobObj.vacancy+`<i class='fas fa-`+jobObj.gender+`'></i>
+                                          <div class='mr-3 d-inline-block'><i class='fas fa-users'></i> `+jobObj.vacancy+` <i class='fas fa-`+jobObj.gender+`'></i>
                                           </div>
                                     </div>
                               </div>
@@ -365,15 +365,11 @@ function articleCard(artObj,position,quantity){
 
 function eventCard(eventObj,position,quantity1,quantity2){
       $("#"+position).empty();
-            if ($( window ).width() > 576){
-                  var quantity=quantity1;
-            } else {
-                  var quantity=quantity2;
-            }
-      $("#"+position).append(`
-            <div class="d-none d-md-inline col-md-4 py-3">
-            </div>`)
-      for (var i=0;i<quantity;i++){
+      if ($( window ).width() > 576){
+            $("#"+position).append(`
+                  <div class="d-none d-md-inline col-md-4 py-3">
+                  </div>`)
+      for (var i=0;i<quantity1;i++){
             $("#"+position).append(`
             <div class="col-12 col-md-4 py-3">
                   <div class="card event__card">
@@ -408,7 +404,7 @@ function eventCard(eventObj,position,quantity1,quantity2){
                                                 <i class="far fa-star"></i> Follow
                                           </label>
                                     </button>
-                                    <button type="button" class="btn btn__sn btn__sn--sm btn__sn--fb p-0 px-2">
+                                    <button type="button" class="btn btn__sn--sm btn__sn--fb p-0 px-2">
                                           <i class="fab fa-facebook-square"></i> Share <span
                                                 class="badge badge-light">4</span>
                                     </button>
@@ -420,6 +416,51 @@ function eventCard(eventObj,position,quantity1,quantity2){
             `
             )   
       }
+            } else {
+                  for (var i=0;i<quantity2;i++){
+                        $("#"+position).append(`
+                        <div class="col-12 col-md-4 py-3">
+                              <div class="card event__card">
+                                    <div class="row p-0 text-dark">
+                                          <div class="col-5 border-right border-right-primary event__card__date">
+                                                <span class="event__card__day">
+                                                      T`+eventObj.begin.substring(3, 5)+`
+                                                </span>
+                                                <span class="event__card__month">
+                                                      `+eventObj.begin.substring(0, 2)+`
+                                                </span>
+                                          </div>
+                                          <div class="col-7 px-0">
+                                                <input class="event__follow__check" id="event`+eventObj.id+`" type="checkbox">
+                                                <button type="button" class="btn btn__sn--sm p-0 px-2 mt-3 event__follow__button event`+eventObj.id+`">
+                                                      <label for="event`+eventObj.id+`Check" class="p-0 m-0">
+                                                            <i class="far fa-star"></i> Follow
+                                                      </label>
+                                                </button>
+                                                <button type="button" class="btn btn__sn btn__sn--sm btn__sn--fb p-0 px-2">
+                                                      <i class="fab fa-facebook-square"></i> Share <span
+                                                            class="badge badge-light">4</span>
+                                                </button>
+                                          </div>
+                                          <div class="col-12 pl-5 pb-4">
+                                                <a href="../shared/constructing.html" title="`+eventObj.title+`">
+                                                      <h5 class="card-title text-left text-truncate">`+eventObj.title+`</h5>
+                                                </a>
+                                                <a href="../employer/employer_profile.html" title="`+eventObj.host+`">
+                                                      <p class="card-text text-left">`+eventObj.host+`</p>
+                                                </a>
+            
+                                          </div>
+                                          
+                                    </div>
+                              </div>
+                        </div>
+            
+                        `
+                        )   
+                  }
+            }
+      
 //       $(window ).resize(function() {
 //             eventCard(eventObj,position,quantity1,quantity2)
 //     }); 

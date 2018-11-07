@@ -362,6 +362,14 @@ a.login:hover, a.signup:hover{
             padding: 5px;
       }
 }
+
+/*------ Hot jobs -------*/
+@media only screen and (max-width: 576px){
+      #myTabContent{
+            width: 80vw;
+      }
+}
+
 /*------ Events -------*/
 
 .event__row {
@@ -373,10 +381,8 @@ a.login:hover, a.signup:hover{
       .tab-content{
       width: 400px;
       }
-      .event__card button.btn__sn--sm{
-            min-width: 200px !important;
-            height: 30px;
-            margin-bottom: 5px;
+      .event__row{
+            width: 90%;
       }
 }
 .event__choose{
@@ -413,6 +419,12 @@ a.event__choose__item {
 }
 .event__card h5, .event__card p{
       color: black;
+}
+.event__card h5{
+      font-size: 1rem;
+}
+.event__card p{
+      font-size: 0.8rem;
 }
 
 .event__card__date {
@@ -454,9 +466,15 @@ a.event__choose__item {
 
       background: #f57f04 !important;
       color: white;
-
 }
 
+@media only screen and (max-width: 576px){
+      .event__card button.btn__sn--sm{
+            min-width: 150px !important;
+            height: 30px;
+            margin-bottom: 5px;
+      }
+}
 
 /* --------- User Reviews --------- */
 .reviews .card {
