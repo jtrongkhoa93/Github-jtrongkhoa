@@ -23,7 +23,11 @@ $(document).ready(function () {
           "position": "fixed",
           "top": "0",
           "z-index": "150",
+          // "padding-bottom":"450px"
         });
+        // $("#section1").css({
+        //   "margin-top":"100px"
+        // })
         $("#title").css({
           "display": "flex"
         });
@@ -31,12 +35,29 @@ $(document).ready(function () {
           "font-size": "20px",
           "width": "70%"
         });
+        if ($( window ).width() < 576){
 
+          $("#myScrollSpy").css({
+            "position": "fixed",
+            "top": "0",
+            "left": "90%",
+            "z-index": "150",
+          });
+          $("#navbarNav").css({
+            "right": "0"
+          });
+          var ind=($("#clear").length);
+          if(ind!=1){
+          $(".container__scroll").append(
+         `<div id="clear" style="clear:both;"></div>`)
+          }
+        }
       } else {
         $("#myScrollSpy").css({
           "position": "inherit",
           "top": "inherit",
           "z-index": "inherit",
+          // "width":"1140px !important"
         });
         $("#title").css({
           "display": "block"
@@ -61,7 +82,7 @@ $(document).ready(function () {
     }, 600);
 
     $('body,html').animate({
-      scrollTop: myScrollSpy + 50
+      scrollTop: myScrollSpy
     }, 700);
     console.log(myScrollSpy);
     event.preventDefault();
@@ -77,6 +98,7 @@ $(document).ready(function () {
     }, 700);
 
   });
+
 
 });
 
@@ -129,7 +151,6 @@ window.onload = function () {
 
 
 };
-
 
 
 function includeHTML() {
