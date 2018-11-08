@@ -43,7 +43,7 @@
                   </div>
 
                   <div w3-include-html="components/job_filter.html"></div>
-
+                  
 
                   <h2 class="text-center text-light">Công việc phù hợp với bạn</h2>
                   <div class="row container mx-auto" id="relevantJobs">
@@ -412,6 +412,16 @@
 
       <div w3-include-html="components/footer.html"></div>
       <div w3-include-html="components/fixed_menu.html"></div>
+      <script>
+                  window.onload=function(){
+                                        
+                  $('.multiselect').multiselect({
+                  buttonWidth: '160px',
+                  includeSelectAllOption: true,
+                  nonSelectedText: 'Tất cả'
+                  });
+                  }
+                </script>
       <script>
             includeHTML();
       </script>

@@ -107,11 +107,6 @@ $(document).ready(function () {
 window.onload = function () {
   $('body,html').scrollTop(0);
 
-  $('.multiselect').multiselect({
-    buttonWidth: '160px',
-    includeSelectAllOption: true,
-    nonSelectedText: 'Tất cả'
-  });
 
   // function getSelectedValues() {
   //   var selectedVal = $(".multiselect").val();
